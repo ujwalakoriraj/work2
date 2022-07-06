@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: pred-ingress
+  namespace: third
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: pred-service
+          servicePort: 80
+        path: /python-webapp

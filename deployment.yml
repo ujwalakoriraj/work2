@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pred-deployment
+  namespace: third
+  labels:
+    app: python-webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-webapp
+  template:
+    metadata:
+      labels:
+        app: python-webapp
+    spec:
+      containers:
+      - name: python-webapp
+        image: ujwala1994/ujwala:latest
+        ports:
+        - containerPort: 80
